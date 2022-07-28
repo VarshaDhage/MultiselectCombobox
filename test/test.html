@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+    <lightning-layout multiplerows="true">
+       <lightning-layout-item size="12" small-device-size="4">
+            <div if:true={colorsList} class="slds-m-right_x-large slds-m-left_x-large">
+                <c-multiselect-combobox  onselect= {single_select_Color} options={colorsList} label="Single select picklist"></c-multiselect-combobox>
+            </div><br>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="4">
+         <div if:true={colorsList} class="slds-m-right_x-large slds-m-left_x-large">
+         <c-multiselect-combobox onselect= {multi_select_Colors} multiselect="true" options={colorsList}  label="Multi select picklist"></c-multiselect-combobox>
+         </div>
+        </lightning-layout-item>
+       <lightning-layout-item size="12" small-device-size="4">
+           <div if:true={pre_selected_colors} class="slds-m-right_x-large slds-m-left_x-large">
+           <c-multiselect-combobox onselect= {preselect_Colors} multiselect="true" options={colorsList} selectedvalues={pre_selected_colors} label="preselected multiselect values"></c-multiselect-combobox>
+           </div> 
+        </lightning-layout-item>
+     
+    </lightning-layout>
+    </lightning-card>
+</template>
